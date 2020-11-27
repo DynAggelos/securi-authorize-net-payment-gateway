@@ -3,7 +3,7 @@
      * @package     Freemius
      * @copyright   Copyright (c) 2016, Freemius, Inc.
      * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
-     * @since       1.0.0
+     * @since       0.0.1
      */
 
     if ( ! defined( 'ABSPATH' ) ) {
@@ -99,7 +99,7 @@
 
         /**
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @return bool
          */

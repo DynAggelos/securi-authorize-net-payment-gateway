@@ -310,7 +310,7 @@
                     $data->version = $current_addon_version;
                 } else {
                     // Add dummy version.
-                    $data->version = '1.0.0';
+                    $data->version = '0.0.1';
 
                     // Add message to developer to deploy the plugin through Freemius.
                 }

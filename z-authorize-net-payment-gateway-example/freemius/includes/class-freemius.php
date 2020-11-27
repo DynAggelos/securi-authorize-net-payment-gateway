@@ -28,7 +28,7 @@
         private $_slug;
 
         /**
-         * @since 1.0.0
+         * @since 0.0.1
          *
          * @var string
          */
@@ -40,25 +40,25 @@
          */
         private $_premium_plugin_basename;
         /**
-         * @since 1.0.0
+         * @since 0.0.1
          *
          * @var string
          */
         private $_free_plugin_basename;
         /**
-         * @since 1.0.0
+         * @since 0.0.1
          *
          * @var string
          */
         private $_plugin_dir_path;
         /**
-         * @since 1.0.0
+         * @since 0.0.1
          *
          * @var string
          */
         private $_plugin_dir_name;
         /**
-         * @since 1.0.0
+         * @since 0.0.1
          *
          * @var string
          */
@@ -191,7 +191,7 @@
         private $_cache;
 
         /**
-         * @since 1.0.0
+         * @since 0.0.1
          *
          * @var FS_Logger
          */
@@ -265,7 +265,7 @@
 
         /**
          * @var FS_Logger
-         * @since 1.0.0
+         * @since 0.0.1
          */
         private static $_static_logger;
 
@@ -394,7 +394,7 @@
          * Main singleton instance.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @param number      $module_id
          * @param string|bool $slug
@@ -2786,7 +2786,7 @@
          * Main singleton instance.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @param  number      $module_id
          * @param  string|bool $slug
@@ -10183,7 +10183,7 @@
 
         /**
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @param bool $reparse_plugin_metadata
          *
@@ -18070,7 +18070,7 @@
 
         /**
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @return string
          */
@@ -18161,7 +18161,7 @@
          * Add default Freemius menu items.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          * @since  1.2.2.7 Also add submenu items when running in a free .org theme so the tabs will be visible.
          */
         private function add_submenu_items() {
@@ -22318,7 +22318,7 @@
          * Render account page.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          */
         function _account_page_render() {
             $this->_logger->entrance();
@@ -22415,7 +22415,7 @@
          * Render pricing page.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          */
         function _pricing_page_render() {
             $this->_logger->entrance();
@@ -23120,7 +23120,7 @@
          * Hook to plugin action links filter.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          */
         private function hook_plugin_action_links() {
             $this->_logger->entrance();
@@ -23144,7 +23144,7 @@
          * Add plugin action link.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @param      $label
          * @param      $url
@@ -23175,7 +23175,7 @@
          * Adds Upgrade and Add-Ons links to the main Plugins page link actions collection.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          */
         function _add_upgrade_action_link() {
             $this->_logger->entrance();
@@ -23464,7 +23464,7 @@
          * Modify plugin's page action links collection.
          *
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @param array $links
          * @param       $file

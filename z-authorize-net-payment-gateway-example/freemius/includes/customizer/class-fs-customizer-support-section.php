@@ -13,7 +13,7 @@
 	/**
 	 * Class Zerif_Customizer_Theme_Info_Main
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access public
 	 */
 	class FS_Customizer_Support_Section extends WP_Customize_Section {
@@ -27,7 +27,7 @@
 		/**
 		 * The type of customize section being rendered.
 		 *
-		 * @since  1.0.0
+		 * @since  0.0.1
 		 * @access public
 		 * @var    string
 		 */
@@ -41,7 +41,7 @@
 		/**
 		 * Add custom parameters to pass to the JS via JSON.
 		 *
-		 * @since  1.0.0
+		 * @since  0.0.1
 		 */
 		public function json() {
 			$json = parent::json();
@@ -75,7 +75,7 @@
 		/**
 		 * Outputs the Underscore.js template.
 		 *
-		 * @since  1.0.0
+		 * @since  0.0.1
 		 */
 		protected function render_template() {
 			?>

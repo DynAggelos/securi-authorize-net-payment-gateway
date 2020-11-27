@@ -14,7 +14,7 @@
 	 * Get object's public variables.
 	 *
 	 * @author Vova Feldman (@svovaf)
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 *
 	 * @param object $object
 	 *

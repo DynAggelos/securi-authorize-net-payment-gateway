@@ -18,7 +18,7 @@
     "gulp-fs": "0.0.2",
     "gulp-gettext": "^0.3.0",
     "gulp-path": "^3.0.3",
-    "gulp-pofill": "^1.0.0",
+    "gulp-pofill": "^0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sort": "^2.0.0",
     "gulp-transifex": "^0.1.17",

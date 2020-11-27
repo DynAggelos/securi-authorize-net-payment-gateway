@@ -242,7 +242,7 @@ There are [two ways](https://freemius.com/help/documentation/wordpress-sdk/softw
 	 * Plugin Name: My Very Awesome Plugin
 	 * Plugin URI:  http://my-awesome-plugin.com
 	 * Description: Create and manage Awesomeness right in WordPress.
-	 * Version:     1.0.0
+	 * Version:     0.0.1
 	 * Author:      Awesomattic
 	 * Author URI:  http://my-awesome-plugin.com/me/
 	 * License:     GPLv2

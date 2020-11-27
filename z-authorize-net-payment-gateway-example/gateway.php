@@ -354,7 +354,7 @@ class WC_Authnet {
     /**
      * Initialize the gateway. Called very early - in the context of the plugins_loaded action
      *
-     * @since 1.0.0
+     * @since 0.0.1
      */
     public function init_gateways() {
         if ( !class_exists( 'WC_Payment_Gateway' ) ) {
@@ -372,7 +372,7 @@ class WC_Authnet {
     /**
      * Add the gateways to WooCommerce
      *
-     * @since 1.0.0
+     * @since 0.0.1
      */
     public function add_gateways( $methods ) {
         $methods[] = 'WC_Gateway_Authnet';

@@ -256,7 +256,7 @@
     if ( ! function_exists( 'fs_request_is_action_secure' ) ) {
         /**
          * @author Vova Feldman (@svovaf)
-         * @since  1.0.0
+         * @since  0.0.1
          *
          * @since  1.2.1.5 Allow nonce verification.
          *
