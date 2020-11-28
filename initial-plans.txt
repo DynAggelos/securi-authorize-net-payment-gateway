@@ -1,0 +1,37 @@
+Objective
+    - Create a WordPress plugin that integrates with WooCommerce and
+    Authorize.net to provide a secure payment gateway which adds as
+    little of a PCI DSS compliance burden as is necessary, while using the
+    latest Authorize.net API connections (not those that are deprecated).
+
+Authorize.net API Documentation
+    API: https://developer.authorize.net/api/reference/index.html
+    Accept.js (PCI DSS SAQ-A EP): https://developer.authorize.net/api/reference/features/acceptjs.html
+    --> Accept Hosted (PCI DSS SAQ-A): https://developer.authorize.net/api/reference/features/accept_hosted.html
+
+Authorize.net Deprecated APIs
+    https://developer.authorize.net/api/upgrade_guide.html
+
+---------------------------------------------------------------------------
+
+Steps
+
+- Integrate with WooCommerce
+- Integrate with Authorize.net
+
+Features Desired
+
+- Add a payment method to the WooCommerce checkout page.
+    - Form Presentation - Option to:
+        -- embed Authorize.net payment form on checkout page,
+        -- or to link to Authorize.net payment form on checkout page.
+    - Payment Method History - Option to:
+        -- remember users past payment methods via a user token stored
+        for each user account,
+        -- or not remember past payment methods.
+    - Receipt - Option to:
+- Add a settings page for controlling the plugin settings and features.
+
+Standard Vs. Pro Versions
+
+//
