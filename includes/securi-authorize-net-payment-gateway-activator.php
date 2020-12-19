@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      0.0.1
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    SecuriAuthorizeNetPaymentGateway
+ * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      0.0.1
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    SecuriAuthorizeNetPaymentGateway
+ * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Activator {
+class SecuriAuthorizeNetPaymentGateway_Activator {
 
 	/**
 	 * Short Description. (use period)

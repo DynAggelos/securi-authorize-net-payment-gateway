@@ -37,22 +37,22 @@ define( 'SECURI_AUTHORIZE_NET_PAYMENT_GATEWAY_VERSION', '0.0.1' );
  * The code that runs during plugin activation.
  * This action is documented in includes/class-plugin-name-activator.php
  */
-function activate_plugin_name() {
+function activate_securi_authorize_net_payment_gateway() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+	SecuriAuthorizeNetPaymentGateway_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-plugin-name-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_securi_authorize_net_payment_gateway() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+	SecuriAuthorizeNetPaymentGateway_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_securi_authorize_net_payment_gateway' );
+register_deactivation_hook( __FILE__, 'deactivate_securi_authorize_net_payment_gateway' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -69,10 +69,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  *
  * @since    0.0.1
  */
-function run_plugin_name() {
+function run_securi_authorize_net_payment_gateway() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new SecuriAuthorizeNetPaymentGateway();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_securi_authorize_net_payment_gateway();

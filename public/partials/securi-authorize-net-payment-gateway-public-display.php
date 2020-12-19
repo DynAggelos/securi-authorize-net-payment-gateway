@@ -8,8 +8,8 @@
  * @link       http://example.com
  * @since      0.0.1
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/public/partials
+ * @package    SecuriAuthorizeNetPaymentGateway
+ * @subpackage SecuriAuthorizeNetPaymentGateway/public/partials
  */
 ?>
 

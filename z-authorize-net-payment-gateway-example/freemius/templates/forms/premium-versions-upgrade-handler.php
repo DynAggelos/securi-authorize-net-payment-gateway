@@ -17,7 +17,7 @@
     $slug = $fs->get_slug();
 
     $plugin_data     = $fs->get_plugin_data();
-    $plugin_name     = $plugin_data['Name'];
+    $SecuriAuthorizeNetPaymentGateway     = $plugin_data['Name'];
     $plugin_basename = $fs->get_plugin_basename();
 
     $license = $fs->_get_license();
@@ -39,7 +39,7 @@
     $message = sprintf(
         fs_text_inline( 'There is a new version of %s available.', 'new-version-available-message', $slug ) .
         fs_text_inline( ' %s to access version %s security & feature updates, and support.', 'x-for-updates-and-support', $slug ),
-        '<span id="plugin_name"></span>',
+        '<span id="SecuriAuthorizeNetPaymentGateway"></span>',
         sprintf(
             '<a id="pricing_url" href="">%s</a>',
             is_object( $license ) ?
@@ -187,7 +187,7 @@
         registerEventHandlers();
 
         function showModal( $module ) {
-            $modal.find( '#plugin_name' ).text( $module.data( 'plugin-name' ) );
+            $modal.find( '#SecuriAuthorizeNetPaymentGateway' ).text( $module.data( 'plugin-name' ) );
             $modal.find( '#pricing_url' ).attr( 'href', $module.data( 'pricing-url' ) );
             $modal.find( '#new_version' ).text( $module.data( 'new-version' ) );
 

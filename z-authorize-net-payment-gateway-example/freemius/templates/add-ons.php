@@ -45,7 +45,7 @@
 ?>
 	<div id="fs_addons" class="wrap fs-section">
 		<?php if ( ! $has_tabs ) : ?>
-		<h2><?php echo esc_html( sprintf( fs_text_inline( 'Add Ons for %s', 'add-ons-for-x', $slug ), $fs->get_plugin_name() ) ) ?></h2>
+		<h2><?php echo esc_html( sprintf( fs_text_inline( 'Add Ons for %s', 'add-ons-for-x', $slug ), $fs->get_securi_authorize_net_payment_gateway() ) ) ?></h2>
 		<?php endif ?>
 
 		<?php $fs->do_action( 'addons/after_title' ) ?>

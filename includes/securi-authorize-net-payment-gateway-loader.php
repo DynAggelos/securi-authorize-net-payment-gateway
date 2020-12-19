@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      0.0.1
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    SecuriAuthorizeNetPaymentGateway
+ * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    SecuriAuthorizeNetPaymentGateway
+ * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Loader {
+class SecuriAuthorizeNetPaymentGateway_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

@@ -72,7 +72,7 @@
          *
          * @var string
          */
-        private $_plugin_name;
+        private $_securi_authorize_net_payment_gateway;
         /**
          * @since 1.2.2
          *
@@ -507,12 +507,12 @@
                 $this->_slug . ( $this->is_theme() ? ':theme' : '' ),
                 /**
                  * Ensure that the admin notice will always have a title by using the stored plugin title if available and
-                 * retrieving the title via the "get_plugin_name" method if there is no stored plugin title available.
+                 * retrieving the title via the "get_securi_authorize_net_payment_gateway" method if there is no stored plugin title available.
                  *
                  * @author Leo Fajardo (@leorw)
                  * @since  1.2.2
                  */
-                ( is_object( $this->_plugin ) ? $this->_plugin->title : $this->get_plugin_name() ),
+                ( is_object( $this->_plugin ) ? $this->_plugin->title : $this->get_securi_authorize_net_payment_gateway() ),
                 $this->get_unique_affix()
             );
 
@@ -4256,7 +4256,7 @@
                             $this->esc_html_inline( 'We use PHP cURL library for the API calls, which is a very common library and usually installed and activated out of the box. Unfortunately, cURL is not activated (or disabled) on your server.', 'curl-missing-message' ) . ' ' .
                             $missing_methods .
                             ' %s',
-                            '<b>' . $this->get_plugin_name() . '</b>',
+                            '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>',
                             sprintf(
                                 '<ol id="fs_firewall_issue_options"><li>%s</li><li>%s</li><li>%s</li></ol>',
                                 sprintf(
@@ -4287,7 +4287,7 @@
                             $this->esc_html_inline( 'From unknown reason, CloudFlare, the firewall we use, blocks the connection.', 'cloudflare-blocks-connection-message' ) . ' ' .
                             $happy_to_resolve_issue_asap .
                             ' %s',
-                            '<b>' . $this->get_plugin_name() . '</b>',
+                            '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>',
                             sprintf(
                                 '<ol id="fs_firewall_issue_options"><li>%s</li><li>%s</li><li>%s</li></ol>',
                                 sprintf(
@@ -4318,7 +4318,7 @@
                             $x_requires_access_to_api . ' ' .
                             $this->esc_html_inline( 'It looks like your server is using Squid ACL (access control lists), which blocks the connection.', 'squid-blocks-connection-message' ) .
                             ' %s',
-                            '<b>' . $this->get_plugin_name() . '</b>',
+                            '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>',
                             sprintf(
                                 '<ol id="fs_firewall_issue_options"><li>%s</li><li>%s</li><li>%s</li></ol>',
                                 sprintf(
@@ -4370,7 +4370,7 @@
                         $connectivity_test_fails_message . ' ' .
                         $this->esc_html_inline( 'It\'s probably a temporary issue on our end. Just to be sure, with your permission, would it be o.k to run another connectivity test?', 'connectivity-test-maybe-temporary' ) . '<br><br>' .
                         '%s',
-                        '<b>' . $this->get_plugin_name() . '</b>',
+                        '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>',
                         sprintf(
                             '<div id="fs_firewall_issue_options">%s %s</div>',
                             sprintf(
@@ -4394,7 +4394,7 @@
                         $connectivity_test_fails_message . ' ' .
                         $happy_to_resolve_issue_asap .
                         ' %s',
-                        '<b>' . $this->get_plugin_name() . '</b>',
+                        '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>',
                         sprintf(
                             '<ol id="fs_firewall_issue_options"><li>%s</li><li>%s</li><li>%s</li></ol>',
                             sprintf(
@@ -4487,7 +4487,7 @@
             // Send email with technical details to resolve API connectivity issues.
             $this->send_email(
                 'api@freemius.com',                              // recipient
-                $title . ' [' . $this->get_plugin_name() . ']',  // subject
+                $title . ' [' . $this->get_securi_authorize_net_payment_gateway() . ']',  // subject
                 $custom_email_sections,
                 array( "Reply-To: $admin_email <$admin_email>" ) // headers
             );
@@ -4659,7 +4659,7 @@
                 'plugin'   => array(
                     'title' => ucfirst( $this->get_module_type() ),
                     'rows'  => array(
-                        'name'    => array( 'Name', $this->get_plugin_name() ),
+                        'name'    => array( 'Name', $this->get_securi_authorize_net_payment_gateway() ),
                         'version' => array( 'Version', $this->get_plugin_version() )
                     )
                 ),
@@ -4916,8 +4916,8 @@
 
                         $this->_admin_notices->add(
                             ( ! empty( $parent_name ) ?
-                                sprintf( $this->get_text_x_inline( '%s cannot run without %s.', 'addonX cannot run without pluginY', 'addon-x-cannot-run-without-y' ), $this->get_plugin_name(), $parent_name ) :
-                                sprintf( $this->get_text_x_inline( '%s cannot run without the plugin.', 'addonX cannot run...', 'addon-x-cannot-run-without-parent' ), $this->get_plugin_name() )
+                                sprintf( $this->get_text_x_inline( '%s cannot run without %s.', 'addonX cannot run without pluginY', 'addon-x-cannot-run-without-y' ), $this->get_securi_authorize_net_payment_gateway(), $parent_name ) :
+                                sprintf( $this->get_text_x_inline( '%s cannot run without the plugin.', 'addonX cannot run...', 'addon-x-cannot-run-without-parent' ), $this->get_securi_authorize_net_payment_gateway() )
                             ),
                             $this->get_text_x_inline( 'Oops', 'exclamation', 'oops' ) . '...',
                             'error'
@@ -5602,7 +5602,7 @@
                 'premium_slug'         => $this->get_option( $plugin_info, 'premium_slug', "{$this->_slug}-premium" ),
                 'parent_plugin_id'     => $parent_id,
                 'version'              => $this->get_plugin_version(),
-                'title'                => $this->get_plugin_name( $premium_suffix ),
+                'title'                => $this->get_securi_authorize_net_payment_gateway( $premium_suffix ),
                 'file'                 => $this->_plugin_basename,
                 'is_premium'           => $this->get_bool_option( $plugin_info, 'is_premium', true ),
                 'premium_suffix'       => $premium_suffix,
@@ -7115,7 +7115,7 @@
             $this->_admin_notices->add_sticky(
                 sprintf(
                     $this->get_text_inline( 'You should receive an activation email for %s to your mailbox at %s. Please make sure you click the activation button in that email to %s.', 'pending-activation-message' ),
-                    '<b>' . $this->get_plugin_name() . '</b>',
+                    '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>',
                     '<b>' . $email . '</b>',
                     ( $is_pending_trial ?
                         $this->get_text_inline( 'start the trial', 'start-the-trial' ) :
@@ -7241,7 +7241,7 @@
                                         sprintf( '<b><a href="%s">%s</a></b>',
                                             $this->get_activation_url( array(), ! $this->is_delegated_connection() ),
                                             sprintf( $this->get_text_x_inline( 'Complete "%s" Activation Now',
-                                                '%s - plugin name. As complete "PluginX" activation now', 'activate-x-now' ), $this->get_plugin_name() )
+                                                '%s - plugin name. As complete "PluginX" activation now', 'activate-x-now' ), $this->get_securi_authorize_net_payment_gateway() )
                                         )
                                     ),
                                     '',
@@ -7322,7 +7322,7 @@
                     $this->_module_type,
                     sprintf( '<b><a href="%s">%s</a></b>',
                         $this->get_activation_url(),
-                        sprintf( $this->get_text_inline( 'Opt in to make "%s" better!', 'optin-x-now' ), $this->get_plugin_name() )
+                        sprintf( $this->get_text_inline( 'Opt in to make "%s" better!', 'optin-x-now' ), $this->get_securi_authorize_net_payment_gateway() )
                     )
                 ),
                 'connect_account',
@@ -10126,7 +10126,7 @@
          *
          * @return string
          */
-        function get_plugin_name( $premium_suffix = false ) {
+        function get_securi_authorize_net_payment_gateway( $premium_suffix = false ) {
             $this->_logger->entrance();
 
             /**
@@ -10134,7 +10134,7 @@
              *
              * @author Vova Feldman
              */
-            if ( ! isset( $this->_plugin_name ) ) {
+            if ( ! isset( $this->_securi_authorize_net_payment_gateway ) ) {
                 // Name is not yet set.
                 $this->set_name( $premium_suffix );
             } else if (
@@ -10145,11 +10145,11 @@
                 $this->set_name( $premium_suffix );
             }
 
-            return $this->_plugin_name;
+            return $this->_securi_authorize_net_payment_gateway;
         }
 
         /**
-         * Calculates and stores the product's name. This helper function was created specifically for get_plugin_name() just to make the code clearer.
+         * Calculates and stores the product's name. This helper function was created specifically for get_securi_authorize_net_payment_gateway() just to make the code clearer.
          *
          * @author Vova Feldman (@svovaf)
          * @since  2.2.1
@@ -10160,7 +10160,7 @@
             $plugin_data = $this->get_plugin_data();
 
             // Get name.
-            $this->_plugin_name = $plugin_data['Name'];
+            $this->_securi_authorize_net_payment_gateway = $plugin_data['Name'];
 
             if ( is_string( $premium_suffix ) ) {
                 $premium_suffix = trim( $premium_suffix );
@@ -10173,12 +10173,12 @@
                     if ( strlen( $plugin_data['Name'] ) > $suffix_len &&
                          $suffix === substr( strtolower( $plugin_data['Name'] ), - $suffix_len )
                     ) {
-                        $this->_plugin_name = substr( $plugin_data['Name'], 0, - $suffix_len );
+                        $this->_securi_authorize_net_payment_gateway = substr( $plugin_data['Name'], 0, - $suffix_len );
                     }
                 }
             }
 
-            $this->_logger->departure( 'Name = ' . $this->_plugin_name );
+            $this->_logger->departure( 'Name = ' . $this->_securi_authorize_net_payment_gateway );
         }
 
         /**
@@ -16832,7 +16832,7 @@
 
                 if ( ! $this->is_paying_or_trial() ) {
                     $this->_admin_notices->add_sticky(
-                        sprintf( $this->get_text_inline( '%s activation was successfully completed.', 'plugin-x-activation-message' ), '<b>' . $this->get_plugin_name() . '</b>' ),
+                        sprintf( $this->get_text_inline( '%s activation was successfully completed.', 'plugin-x-activation-message' ), '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>' ),
                         'activation_complete'
                     );
                 }
@@ -16858,7 +16858,7 @@
                         $this->_admin_notices->add_sticky(
                             sprintf(
                                 $this->get_text_inline( 'Your trial has been successfully started.', 'trial-started-message' ),
-                                '<i>' . $this->get_plugin_name() . '</i>'
+                                '<i>' . $this->get_securi_authorize_net_payment_gateway() . '</i>'
                             ) . $this->get_complete_upgrade_instructions( $trial_plan->title ),
                             'trial_started',
                             $this->get_text_x_inline( 'Yee-haw', 'interjection expressing joy or exuberance', 'yee-haw' ) . '!'
@@ -17449,7 +17449,7 @@
 
                 if ( ! $silent ) {
                     $this->_admin_notices->add(
-                        sprintf( $this->get_text_inline( 'Couldn\'t activate %s.', 'could-not-activate-x' ), $this->get_plugin_name() ) . ' ' .
+                        sprintf( $this->get_text_inline( 'Couldn\'t activate %s.', 'could-not-activate-x' ), $this->get_securi_authorize_net_payment_gateway() ) . ' ' .
                         $this->get_text_inline( 'Please contact us with the following message:', 'contact-us-with-error-message' ) . ' ' . '<b>' . $result->error->message . '</b>',
                         $this->get_text_x_inline( 'Oops', 'exclamation', 'oops' ) . '...',
                         'error'
@@ -17554,7 +17554,7 @@
                         $this->get_text_inline( 'An unknown error has occurred.', 'unknown-error' );
 
                     $this->_admin_notices->add(
-                        sprintf( $this->get_text_inline( 'Couldn\'t activate %s.', 'could-not-activate-x' ), $this->get_plugin_name() ) . ' ' .
+                        sprintf( $this->get_text_inline( 'Couldn\'t activate %s.', 'could-not-activate-x' ), $this->get_securi_authorize_net_payment_gateway() ) . ' ' .
                         $this->get_text_inline( 'Please contact us with the following message:', 'contact-us-with-error-message' ) . ' ' . '<b>' . $error_message . '</b>',
                         $this->get_text_x_inline( 'Oops', 'exclamation', 'oops' ) . '...',
                         'error'
@@ -17729,7 +17729,7 @@
 
             if ( isset( $parent_install->error ) ) {
                 $this->_admin_notices->add(
-                    sprintf( $this->get_text_inline( 'Couldn\'t activate %s.', 'could-not-activate-x' ), $this->get_plugin_name() ) . ' ' .
+                    sprintf( $this->get_text_inline( 'Couldn\'t activate %s.', 'could-not-activate-x' ), $this->get_securi_authorize_net_payment_gateway() ) . ' ' .
                     $this->get_text_inline( 'Please contact us with the following message:', 'contact-us-with-error-message' ) . ' ' . '<b>' . $parent_install->error->message . '</b>',
                     $this->get_text_x_inline( 'Oops', 'exclamation', 'oops' ) . '...',
                     'error'
@@ -17913,8 +17913,8 @@
                 // Add the opt-in page without a menu item.
                 $hook = FS_Admin_Menu_Manager::add_subpage(
                     null,
-                    $this->get_plugin_name(),
-                    $this->get_plugin_name(),
+                    $this->get_securi_authorize_net_payment_gateway(),
+                    $this->get_securi_authorize_net_payment_gateway(),
                     'manage_options',
                     $this->_slug,
                     array( &$this, '_connect_page_render' )
@@ -17932,8 +17932,8 @@
                 if ( false === $hook ) {
                     // Create new menu item just for the opt-in.
                     $hook = FS_Admin_Menu_Manager::add_page(
-                        $this->get_plugin_name(),
-                        $this->get_plugin_name(),
+                        $this->get_securi_authorize_net_payment_gateway(),
+                        $this->get_securi_authorize_net_payment_gateway(),
                         'manage_options',
                         $this->_menu->get_slug(),
                         array( &$this, '_connect_page_render' )
@@ -18027,8 +18027,8 @@
                      $this->is_activation_mode()
                 ) {
                     $this->_dynamically_added_top_level_page_hook_name = $this->_menu->add_page_and_update(
-                        $this->get_plugin_name(),
-                        $this->get_plugin_name(),
+                        $this->get_securi_authorize_net_payment_gateway(),
+                        $this->get_securi_authorize_net_payment_gateway(),
                         'manage_options',
                         $this->_menu->has_menu() ? $this->_menu->get_slug() : $this->_slug
                     );
@@ -18036,8 +18036,8 @@
             } else {
                 $this->_menu->add_subpage_and_update(
                     $this->_menu->get_parent_slug(),
-                    $this->get_plugin_name(),
-                    $this->get_plugin_name(),
+                    $this->get_securi_authorize_net_payment_gateway(),
+                    $this->get_securi_authorize_net_payment_gateway(),
                     'manage_options',
                     $this->_menu->get_slug()
                 );
@@ -18177,7 +18177,7 @@
                     $this->add_submenu_item(
                         $this->get_text_inline( 'Affiliation', 'affiliation' ),
                         array( &$this, '_affiliation_page_render' ),
-                        $this->get_plugin_name() . ' &ndash; ' . $this->get_text_inline( 'Affiliation', 'affiliation' ),
+                        $this->get_securi_authorize_net_payment_gateway() . ' &ndash; ' . $this->get_text_inline( 'Affiliation', 'affiliation' ),
                         'manage_options',
                         'affiliation',
                         'Freemius::_clean_admin_content_section',
@@ -18207,7 +18207,7 @@
                     $this->add_submenu_item(
                         $this->get_text_inline( 'Account', 'account' ),
                         array( &$this, '_account_page_render' ),
-                        $this->get_plugin_name() . ' &ndash; ' . $this->get_text_inline( 'Account', 'account' ),
+                        $this->get_securi_authorize_net_payment_gateway() . ' &ndash; ' . $this->get_text_inline( 'Account', 'account' ),
                         'manage_options',
                         'account',
                         array( &$this, '_account_page_load' ),
@@ -18223,7 +18223,7 @@
                     $this->add_submenu_item(
                         $this->get_text_inline( 'Contact Us', 'contact-us' ),
                         array( &$this, '_contact_page_render' ),
-                        $this->get_plugin_name() . ' &ndash; ' . $this->get_text_inline( 'Contact Us', 'contact-us' ),
+                        $this->get_securi_authorize_net_payment_gateway() . ' &ndash; ' . $this->get_text_inline( 'Contact Us', 'contact-us' ),
                         'manage_options',
                         'contact',
                         'Freemius::_clean_admin_content_section',
@@ -18236,7 +18236,7 @@
                     $this->add_submenu_item(
                         $this->get_text_inline( 'Add-Ons', 'add-ons' ),
                         array( &$this, '_addons_page_render' ),
-                        $this->get_plugin_name() . ' &ndash; ' . $this->get_text_inline( 'Add-Ons', 'add-ons' ),
+                        $this->get_securi_authorize_net_payment_gateway() . ' &ndash; ' . $this->get_text_inline( 'Add-Ons', 'add-ons' ),
                         'manage_options',
                         'addons',
                         array( &$this, '_addons_page_load' ),
@@ -18272,7 +18272,7 @@
                     $this->add_submenu_item(
                         $pricing_cta_text . '&nbsp;&nbsp;' . ( is_rtl() ? $this->get_text_x_inline( '&#x2190;', 'ASCII arrow left icon', 'symbol_arrow-left' ) : $this->get_text_x_inline( '&#x27a4;', 'ASCII arrow right icon', 'symbol_arrow-right' ) ),
                         array( &$this, '_pricing_page_render' ),
-                        $this->get_plugin_name() . ' &ndash; ' . $this->get_text_x_inline( 'Pricing', 'noun', 'pricing' ),
+                        $this->get_securi_authorize_net_payment_gateway() . ' &ndash; ' . $this->get_text_x_inline( 'Pricing', 'noun', 'pricing' ),
                         'manage_options',
                         'pricing',
                         'Freemius::_clean_admin_content_section',
@@ -20317,7 +20317,7 @@
                                 self::$_global_admin_notices->add(
                                     sprintf(
                                         $this->get_text_inline( 'Your server is blocking the access to Freemius\' API, which is crucial for %1$s synchronization. Please contact your host to whitelist %2$s', 'server-blocking-access' ),
-                                        $this->get_plugin_name(),
+                                        $this->get_securi_authorize_net_payment_gateway(),
                                         '<b>' . implode( ', ', $this->apply_filters( 'api_domains', array(
                                             'api.freemius.com',
                                             'wp.freemius.com'
@@ -20650,7 +20650,7 @@
                         $this->_admin_notices->add_sticky(
                             sprintf(
                                 $this->get_text_inline( 'Your trial has been successfully started.', 'trial-started-message' ),
-                                '<i>' . $this->get_plugin_name() . '</i>'
+                                '<i>' . $this->get_securi_authorize_net_payment_gateway() . '</i>'
                             ) . $this->get_complete_upgrade_instructions( $this->get_trial_plan()->title ),
                             'trial_started',
                             $this->get_text_x_inline( 'Yee-haw', 'interjection expressing joy or exuberance', 'yee-haw' ) . '!'
@@ -22381,7 +22381,7 @@
 
             if ( ! $this->is_registered() && $this->is_org_repo_compliant() ) {
                 $this->_admin_notices->add(
-                    sprintf( $this->get_text_inline( 'Just letting you know that the add-ons information of %s is being pulled from an external server.', 'addons-info-external-message' ), '<b>' . $this->get_plugin_name() . '</b>' ),
+                    sprintf( $this->get_text_inline( 'Just letting you know that the add-ons information of %s is being pulled from an external server.', 'addons-info-external-message' ), '<b>' . $this->get_securi_authorize_net_payment_gateway() . '</b>' ),
                     $this->get_text_x_inline( 'Heads up', 'advance notice of something that will need attention.', 'heads-up' ),
                     'update-nag'
                 );
@@ -22959,7 +22959,7 @@
 
             $message = sprintf(
                 $this->get_text_x_inline( 'Hey', 'exclamation', 'hey' ) . '! ' . $this->get_text_inline( 'How do you like %s so far? Test all our %s premium features with a %d-day free trial.', 'trial-x-promotion-message' ),
-                sprintf( '<b>%s</b>', $this->get_plugin_name() ),
+                sprintf( '<b>%s</b>', $this->get_securi_authorize_net_payment_gateway() ),
                 $plans_string,
                 $trial_period
             );
@@ -23052,7 +23052,7 @@
 
             $message = sprintf(
                 $this->get_text_inline( 'Hey there, did you know that %s has an affiliate program? If you like the %s you can become our ambassador and earn some cash!', 'become-an-ambassador-admin-notice' ),
-                sprintf( '<strong>%s</strong>', $this->get_plugin_name() ),
+                sprintf( '<strong>%s</strong>', $this->get_securi_authorize_net_payment_gateway() ),
                 $this->get_module_label( true )
             );
 

@@ -42,7 +42,7 @@
 
 					if ( false !== $next_execution ) {
 						$scheduled_crons[ $slug ][] = array(
-							'name' => $fs->get_plugin_name(),
+							'name' => $fs->get_securi_authorize_net_payment_gateway(),
 							'slug' => $slug,
 							'module_type' => $fs->get_module_type(),
 							'type' => 'sync_cron',
@@ -58,7 +58,7 @@
 						false !== $last_install_execution
 					) {
 						$scheduled_crons[ $slug ][] = array(
-							'name' => $fs->get_plugin_name(),
+							'name' => $fs->get_securi_authorize_net_payment_gateway(),
 							'slug' => $slug,
 							'module_type' => $fs->get_module_type(),
 							'type' => 'install_sync',

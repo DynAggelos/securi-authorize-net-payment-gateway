@@ -170,7 +170,7 @@
 							fs_text_inline( 'Thanks %s!', 'thanks-x', $slug ) . '<br>' .
 							fs_text_inline( 'You should receive an activation email for %s to your mailbox at %s. Please make sure you click the activation button in that email to %s.', 'pending-activation-message', $slug ),
 							$first_name,
-							'<b>' . $fs->get_plugin_name() . '</b>',
+							'<b>' . $fs->get_securi_authorize_net_payment_gateway() . '</b>',
 							'<b>' . $current_user->user_email . '</b>',
 							fs_text_inline( 'complete the install', 'complete-the-install', $slug )
 						) );
@@ -186,9 +186,9 @@
                                 /* translators: %s: name (e.g. Hey John,) */
                                 $hey_x_text . '<br>'
                             ) .
-							sprintf( fs_text_inline( 'Thanks for purchasing %s! To get started, please enter your license key:', 'thanks-for-purchasing', $slug ), '<b>' . $fs->get_plugin_name() . '</b>' ),
+							sprintf( fs_text_inline( 'Thanks for purchasing %s! To get started, please enter your license key:', 'thanks-for-purchasing', $slug ), '<b>' . $fs->get_securi_authorize_net_payment_gateway() . '</b>' ),
 							$first_name,
-							$fs->get_plugin_name()
+							$fs->get_securi_authorize_net_payment_gateway()
 						);
 					} else {
 						$filter                = 'connect_message';
@@ -220,13 +220,13 @@
                             ) .
 							sprintf(
 								esc_html( $default_optin_message ),
-								'<b>' . esc_html( $fs->get_plugin_name() ) . '</b>',
+								'<b>' . esc_html( $fs->get_securi_authorize_net_payment_gateway() ) . '</b>',
 								'<b>' . $current_user->user_login . '</b>',
 								'<a href="' . $site_url . '" target="_blank" rel="noopener noreferrer">' . $site_url . '</a>',
 								$freemius_link
 							),
 							$first_name,
-							$fs->get_plugin_name(),
+							$fs->get_securi_authorize_net_payment_gateway(),
 							$current_user->user_login,
 							'<a href="' . $site_url . '" target="_blank" rel="noopener noreferrer">' . $site_url . '</a>',
 							$freemius_link,
