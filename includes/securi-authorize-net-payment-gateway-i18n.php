@@ -6,12 +6,22 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://example.com
+ * @link       https://www.dynaggelos.com
  * @since      0.0.1
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  */
+
+ /**
+  * The Securi Authorize.net Payment Gateway Namespace
+  *
+  * @link       https://www.dynaggelos.com
+  * @since      0.0.1
+  *
+  * @package    SecuriAuthorizeNetPaymentGateway
+  */
+namespace SecuriAuthorizeNetPaymentGateway;
 
 /**
  * Define the internationalization functionality.
@@ -22,9 +32,9 @@
  * @since      0.0.1
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
- * @author     Your Name <email@example.com>
+ * @author     Joshua Gerrity
  */
-class SecuriAuthorizeNetPaymentGateway_i18n {
+class i18n {
 
 
 	/**

@@ -3,12 +3,22 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       http://example.com
+ * @link       https://www.dynaggelos.com
  * @since      0.0.1
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/admin
  */
+
+ /**
+  * The Securi Authorize.net Payment Gateway Namespace
+  *
+  * @link       https://www.dynaggelos.com
+  * @since      0.0.1
+  *
+  * @package    SecuriAuthorizeNetPaymentGateway
+  */
+namespace SecuriAuthorizeNetPaymentGateway;
 
 /**
  * The admin-specific functionality of the plugin.
@@ -18,9 +28,9 @@
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/admin
- * @author     Your Name <email@example.com>
+ * @author     Joshua Gerrity
  */
-class SecuriAuthorizeNetPaymentGateway_Admin {
+class AdminSection {
 
 	/**
 	 * The ID of this plugin.

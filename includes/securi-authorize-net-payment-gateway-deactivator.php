@@ -3,12 +3,22 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://example.com
+ * @link       https://www.dynaggelos.com
  * @since      0.0.1
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  */
+
+ /**
+  * The Securi Authorize.net Payment Gateway Namespace
+  *
+  * @link       https://www.dynaggelos.com
+  * @since      0.0.1
+  *
+  * @package    SecuriAuthorizeNetPaymentGateway
+  */
+namespace SecuriAuthorizeNetPaymentGateway;
 
 /**
  * Fired during plugin deactivation.
@@ -18,9 +28,9 @@
  * @since      0.0.1
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
- * @author     Your Name <email@example.com>
+ * @author     Joshua Gerrity
  */
-class SecuriAuthorizeNetPaymentGateway_Deactivator {
+class Deactivator {
 
 	/**
 	 * Short Description. (use period)

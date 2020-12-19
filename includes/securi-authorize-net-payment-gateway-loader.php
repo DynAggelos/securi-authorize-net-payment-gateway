@@ -3,12 +3,22 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://example.com
+ * @link       https://www.dynaggelos.com
  * @since      0.0.1
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  */
+
+ /**
+   * The Securi Authorize.net Payment Gateway Namespace
+   *
+   * @link       https://www.dynaggelos.com
+   * @since      0.0.1
+   *
+   * @package    SecuriAuthorizeNetPaymentGateway
+   */
+ namespace SecuriAuthorizeNetPaymentGateway;
 
 /**
  * Register all actions and filters for the plugin.
@@ -19,9 +29,9 @@
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
- * @author     Your Name <email@example.com>
+ * @author     Joshua Gerrity
  */
-class SecuriAuthorizeNetPaymentGateway_Loader {
+class Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

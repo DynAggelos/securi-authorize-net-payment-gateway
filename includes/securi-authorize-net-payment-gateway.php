@@ -6,12 +6,22 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
+ * @link       https://www.dynaggelos.com
  * @since      0.0.1
  *
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
  */
+
+ /**
+  * The Securi Authorize.net Payment Gateway Namespace
+  *
+  * @link       https://www.dynaggelos.com
+  * @since      0.0.1
+  *
+  * @package    SecuriAuthorizeNetPaymentGateway
+  */
+namespace SecuriAuthorizeNetPaymentGateway;
 
 /**
  * The core plugin class.
@@ -25,9 +35,9 @@
  * @since      0.0.1
  * @package    SecuriAuthorizeNetPaymentGateway
  * @subpackage SecuriAuthorizeNetPaymentGateway/includes
- * @author     Your Name <email@example.com>
+ * @author     Joshua Gerrity
  */
-class SecuriAuthorizeNetPaymentGateway {
+class PluginMain {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +45,7 @@ class SecuriAuthorizeNetPaymentGateway {
 	 *
 	 * @since    0.0.1
 	 * @access   protected
-	 * @var      SecuriAuthorizeNetPaymentGateway_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      SecuriAuthorizeNetPaymentGateway\Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -86,10 +96,10 @@ class SecuriAuthorizeNetPaymentGateway {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - SecuriAuthorizeNetPaymentGateway_Loader. Orchestrates the hooks of the plugin.
-	 * - SecuriAuthorizeNetPaymentGateway_i18n. Defines internationalization functionality.
-	 * - SecuriAuthorizeNetPaymentGateway_Admin. Defines all hooks for the admin area.
-	 * - SecuriAuthorizeNetPaymentGateway_Public. Defines all hooks for the public side of the site.
+	 * - SecuriAuthorizeNetPaymentGateway\Loader. Orchestrates the hooks of the plugin.
+	 * - SecuriAuthorizeNetPaymentGateway\i18n. Defines internationalization functionality.
+	 * - SecuriAuthorizeNetPaymentGateway\AdminSection. Defines all hooks for the admin area.
+	 * - SecuriAuthorizeNetPaymentGateway\PublicSection. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +113,33 @@ class SecuriAuthorizeNetPaymentGateway {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/securi-authorize-net-payment-gateway-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/securi-authorize-net-payment-gateway-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-plugin-name-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/securi-authorize-net-payment-gateway-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-plugin-name-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/securi-authorize-net-payment-gateway-public.php';
 
-		$this->loader = new SecuriAuthorizeNetPaymentGateway_Loader();
+		$this->loader = new Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the SecuriAuthorizeNetPaymentGateway_i18n class in order to set the domain and to register the hook
+	 * Uses the SecuriAuthorizeNetPaymentGateway\i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    0.0.1
@@ -137,7 +147,7 @@ class SecuriAuthorizeNetPaymentGateway {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new SecuriAuthorizeNetPaymentGateway_i18n();
+		$plugin_i18n = new i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +162,7 @@ class SecuriAuthorizeNetPaymentGateway {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new SecuriAuthorizeNetPaymentGateway_Admin( $this->get_securi_authorize_net_payment_gateway(), $this->get_version() );
+		$plugin_admin = new AdminSection( $this->get_securi_authorize_net_payment_gateway(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +178,7 @@ class SecuriAuthorizeNetPaymentGateway {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new SecuriAuthorizeNetPaymentGateway_Public( $this->get_securi_authorize_net_payment_gateway(), $this->get_version() );
+		$plugin_public = new PublicSection( $this->get_securi_authorize_net_payment_gateway(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +209,7 @@ class SecuriAuthorizeNetPaymentGateway {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     0.0.1
-	 * @return    SecuriAuthorizeNetPaymentGateway_Loader    Orchestrates the hooks of the plugin.
+	 * @return    SecuriAuthorizeNetPaymentGateway\Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

@@ -35,20 +35,20 @@ define( 'SECURI_AUTHORIZE_NET_PAYMENT_GATEWAY_VERSION', '0.0.1' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * This action is documented in includes/securi-authorize-net-payment-gateway-activator.php
  */
 function activate_securi_authorize_net_payment_gateway() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	SecuriAuthorizeNetPaymentGateway_Activator::activate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/securi-authorize-net-payment-gateway-activator.php';
+	SecuriAuthorizeNetPaymentGateway\Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * This action is documented in includes/securi-authorize-net-payment-gateway-deactivator.php
  */
 function deactivate_securi_authorize_net_payment_gateway() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	SecuriAuthorizeNetPaymentGateway_Deactivator::deactivate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/securi-authorize-net-payment-gateway-deactivator.php';
+	SecuriAuthorizeNetPaymentGateway\Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_securi_authorize_net_payment_gateway' );
@@ -58,7 +58,7 @@ register_deactivation_hook( __FILE__, 'deactivate_securi_authorize_net_payment_g
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/securi-authorize-net-payment-gateway.php';
 
 /**
  * Begins execution of the plugin.
@@ -71,7 +71,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  */
 function run_securi_authorize_net_payment_gateway() {
 
-	$plugin = new SecuriAuthorizeNetPaymentGateway();
+	$plugin = new SecuriAuthorizeNetPaymentGateway\PluginMain();
 	$plugin->run();
 
 }
